@@ -5,22 +5,44 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/mainLayout"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/background"
+    android:background="#ff61b8ff"
     tools:context=".MainActivity">
 
      <TextView
         android:layout_centerHorizontal="true"
          android:text="@string/GogoTitle"
          android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="50sp"
-         android:textSize="100sp"
+         android:textStyle="bold"
+         android:layout_marginTop="50sp"
+         android:textSize="80sp"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:id="@+id/textView">
 
      </TextView>
+
+    <!--<ImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/cloud"
+        android:layout_below="@+id/subTitle"
+        android:layout_alignLeft="@+id/btnLogin" />-->
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:text="@string/GogoSubTitle"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="30sp"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:id="@+id/subTitle">
+    </TextView>
 
 
     <Button
@@ -28,53 +50,34 @@
         android:layout_height="35sp"
         android:layout_width="200sp"
         android:text="@string/loginWithGogo"
-        android:textColor="@android:color/white"
+        android:textColor="#ff6767ff"
         android:textSize="15sp"
-        android:background="@drawable/login_button"
+        android:background="@drawable/round_button"
         android:onClick="onClickLogin"
-        android:layout_marginBottom="35dp"
-        android:layout_above="@+id/signup_textview"
-        android:layout_centerHorizontal="true">
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView">
 
    </Button>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/signup_for_a_new_gogo_account"
-        android:id="@+id/signup_textview"
-        android:textIsSelectable="false"
+    <Button
+        android:id="@+id/btnLoginWithFacebook"
+        android:layout_height="35sp"
+        android:layout_width="200sp"
+        android:text="@string/loginWithFacebook"
+        android:textColor="#ff6767ff"
+        android:textSize="15sp"
+        android:background="@drawable/round_button"
+        android:onClick="onClickLogin"
+        android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/btnLogin"
-        android:layout_marginBottom="12dp" />
+        android:drawableLeft="@drawable/facebook_logo"
+        >
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/password"
-        android:layout_above="@+id/btnLogin"
-        android:layout_centerHorizontal="true"
-        android:singleLine="false"
-        android:layout_marginBottom="15dp"
-        android:layout_alignRight="@id/btnLogin"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:hint="Password" />
+    </Button>
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/email"
-        android:textColorHint="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:layout_above="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_marginBottom="11dp"
 
-        android:hint="E-Mail" />
+
+
 </RelativeLayout>

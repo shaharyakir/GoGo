@@ -1,12 +1,24 @@
 package com.sashapps.gogo;
 
+import android.animation.ObjectAnimator;
+import android.app.ActionBar;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class MainActivity extends Activity {
 
@@ -15,16 +27,22 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // view.setVisibility(View.INVISIBLE);
-            }
-        });
+        // Replace TypeFace for all views
+        ViewGroup root = (ViewGroup)findViewById(R.id.mainLayout);
+        Utilities.setFont(this,root);
 
-        TextView tv = (TextView) findViewById(R.id.signup_textview);
-        tv.setTextColor(getResources().getColorStateList(R.drawable.text_color));
+        // Handle the image animation
+        ImageView backgroundMovingImage = new ImageView(this);
+        backgroundMovingImage.setImageResource(R.drawable.cloud);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(200, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        backgroundMovingImage.setX(0);
+        Random r = new Random();
+        backgroundMovingImage.setY(r.nextFloat() * root.getHeight());
+        backgroundMovingImage.setLayoutParams(lp);
+        backgroundMovingImage.setId(900);
+        root.addView(backgroundMovingImage);
+
+
 
     }
 
@@ -38,4 +56,30 @@ public class MainActivity extends Activity {
 
 
     
+}
+
+class AnimateTask extends AsyncTask{
+
+    @Override
+    protected Object doInBackground(Object[] objects) {
+        return null;
+    }
+
+    protected void onPostExecute(Bitmap result){
+        int i=0;
+        while (i<100){
+            i++;
+            Paint paint = new Paint();
+            Point size = new Point();
+
+            //getWindowManager().getDefaultDisplay().getSize(size);
+            //int dest = size.x;
+            int dest = 700;
+
+            backgroundMovingImage.animate().translationX(dest).setDuration(5000).start();
+            backgroundMovingImage.setX(0);
+            Random r = new Random();
+            backgroundMovingImage.setY(r.nextFloat() * root.getHeight());
+        }
+    }
 }
