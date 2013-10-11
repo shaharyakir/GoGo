@@ -11,18 +11,86 @@
     android:clickable="true">
 
     <TextView
-        style="@style/SmallTitle"
+        style="@style/Title.Small"
         android:text="@string/sign_in"
+        android:id="@+id/sign_in_title"
         />
 
     <ImageView
-        android:src="@drawable/navigation_back_unclicked"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:src="@drawable/navigation_button"
+        style="@style/NavigationButton"
         android:layout_marginTop="10sp"
         android:onClick="goBack"
         />
 
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_in_title"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/usernameLayout"
+        >
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/RoundCorneredView.TextView"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:text="Username"
+            android:background="@drawable/textview_loginscreen_top"
+            />
+    <EditText
+        android:id="@+id/et1"
+        style="@style/RoundCorneredView.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:hint="or email"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="0dp"
+        android:background="@drawable/edittext_loginscreen_top"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0.01dp"
+        android:id="@+id/passwordLayout"
+        >
+        <TextView
+            android:id="@+id/tv2"
+            style="@style/RoundCorneredView.TextView"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:text="Password"
+            android:background="@drawable/textview_loginscreen_bottom"
+            />
+        <EditText
+            android:id="@+id/et2"
+            style="@style/RoundCorneredView.EditText"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:inputType="textPassword"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="0dp"
+            android:background="@drawable/edittext_loginscreen_bottom"
 
+            />
+    </LinearLayout>
+    <Button
+        android:layout_below="@id/passwordLayout"
+        android:text="Go!"
+        style="@style/RoundCorneredView.Button"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="80dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="signIn"
+        />
 </RelativeLayout>

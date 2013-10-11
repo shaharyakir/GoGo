@@ -13,5 +13,9 @@
     <string name="title_activity_login_to_gogo">Login To Gogo</string>
     <string name="hello_world">Hello world!</string>
     <string name="sign_in">Sign In</string>
+    <string name="title_activity_where_to_go">Where To Go</string>
+
+    <!-- Where do you want to go activity -->
+    <string name="where_do_you_want_to_go">Where do you want to go?</string>
 
 </resources>
