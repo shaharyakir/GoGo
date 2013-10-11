@@ -10,5 +10,8 @@
     <string name="email">E-Mail:</string>
     <string name="password">Password:</string>
     <string name="GogoSubTitle">Find someone to travel with.</string>
+    <string name="title_activity_login_to_gogo">Login To Gogo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="sign_in">Sign In</string>
 
 </resources>

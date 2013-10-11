@@ -17,4 +17,31 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="GogoTheme">
+
+        <item name="android:background">#ff61b8ff</item>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+
+    <style name="SmallTitle">
+
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_height">35sp</item>
+        <item name="android:layout_width">200sp</item>
+        <item name="android:textColor">#ff6767ff</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:background">@drawable/round_button</item>
+    </style>
+
 </resources>

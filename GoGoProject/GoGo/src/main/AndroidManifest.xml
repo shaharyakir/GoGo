@@ -12,14 +12,21 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/GogoTheme" >
         <activity
             android:name="com.sashapps.gogo.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sashapps.gogo.LoginToGogoActivity"
+            android:label="@string/title_activity_login_to_gogo" >
+            <intent-filter>
+                <action android:name="com.sashapps.gogo.LoginToGogoActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
     </application>
