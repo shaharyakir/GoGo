@@ -23,6 +23,11 @@ public class WhereToGoActivity extends Activity {
         overridePendingTransition(R.anim.anim_in_back,R.anim.anim_out_back);
     }
 
+    public void search(View v){
+        DbOpenHelper db = new DbOpenHelper(getBaseContext());
+        db.returnContinentByCountry("Spain");
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

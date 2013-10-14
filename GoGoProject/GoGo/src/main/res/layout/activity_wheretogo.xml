@@ -13,6 +13,7 @@
         style="@style/Title.Small"
         android:text="@string/where_do_you_want_to_go"
         android:id="@+id/where_to_go_title"
+
         android:gravity="center"
         android:layout_below="@+id/nav_back"
         />
@@ -31,5 +32,25 @@
         android:src="@drawable/world"
         android:layout_below="@id/where_to_go_title"
         />
+
+    <Button
+        style="@style/RoundCorneredView.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Africa"
+        android:id="@+id/button"
+        android:onClick="search"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>
