@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by shahar on 14/10/13.
@@ -42,11 +44,20 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public String returnContinentByCountry(String country){
+    public ArrayList<String> returnCountriesByContinent(String continent){
+
+        ArrayList<String> countries = new ArrayList<String>();
+
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT continent FROM countries WHERE country='"+country+"';",null);
+        Cursor c = db.rawQuery("SELECT country FROM countries WHERE continent='"+continent+"';",null);
         c.moveToFirst();
-        return "test";
+
+        while (c.moveToNext()){
+            String country = c.getString(c.getColumnIndex(COLUMN_COUNTRY));
+            countries.add(country);
+        }
+
+        return countries;
     }
 
 }
