@@ -57,6 +57,8 @@ public class DbOpenHelper extends SQLiteOpenHelper {
             countries.add(country);
         }
 
+        db.close();
+
         return countries;
     }
 

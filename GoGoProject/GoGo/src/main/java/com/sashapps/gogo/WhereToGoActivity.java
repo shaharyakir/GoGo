@@ -1,6 +1,7 @@
 package com.sashapps.gogo;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -33,10 +34,14 @@ public class WhereToGoActivity extends Activity {
         ((ListView)findViewById(R.id.countryListView)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),
-                        "Click ListItem Number " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_LONG)
-                        .show();
+
+                Intent intent = new Intent("com.sashapps.gogo.WhatToDoActivity");
+                intent.putExtra("country", adapterView.getItemAtPosition(i).toString());
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.anim_in, R.anim.anim_out);
             }
+
         });
 
         // Handle the continent selection
@@ -117,7 +122,6 @@ public class WhereToGoActivity extends Activity {
 
             ((ListView)findViewById(R.id.countryListView)).setAdapter(arrayAdapter);
 
-            db.close();
         }
         else{
             ((ListView)findViewById(R.id.countryListView)).setAdapter(null);
@@ -131,6 +135,8 @@ public class WhereToGoActivity extends Activity {
         return true;
     }
 
+
+    // Map utilities
     public int getHotspotColor (int hotspotId, int x, int y) {
         ImageView img = (ImageView) findViewById (hotspotId);
         img.setDrawingCacheEnabled(true);
@@ -140,12 +146,6 @@ public class WhereToGoActivity extends Activity {
     }
 
     public boolean closeMatch (int color1, int color2, int tolerance) {
-
-        Log.d("Shahar","Searching for color:" + Integer.toString(color1));
-        Log.d("Shahar","Diff R:" + Integer.toString((int) Math.abs (Color.red (color1) - Color.red (color2))));
-        Log.d("Shahar","Diff G:" + Integer.toString((int) Math.abs (Color.green(color1) - Color.green(color2))));
-        Log.d("Shahar","Diff B:" + Integer.toString((int) Math.abs (Color.blue(color1) - Color.blue (color2))));
-
 
         if ((int) Math.abs (Color.red (color1) - Color.red (color2)) > tolerance )
             return false;

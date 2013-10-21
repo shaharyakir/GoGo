@@ -34,9 +34,17 @@
         <activity
             android:name="com.sashapps.gogo.WhereToGoActivity"
             android:label="@string/title_activity_where_to_go" >
-
             <intent-filter>
                 <action android:name="com.sashapps.gogo.WhereToGoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sashapps.gogo.WhatToDoActivity"
+            android:label="@string/title_activity_what_to_do" >
+            <intent-filter>
+                <action android:name="com.sashapps.gogo.WhatToDoActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- General Strings -->
     <string name="app_name">GoGo</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- MainActivity -->
     <string name="loginWithGogo">Login with GoGo! account</string>
     <string name="loginWithFacebook">Login with Facebook</string>
     <string name="signup_for_a_new_gogo_account"><u>Sign up for a new GoGo! account</u></string>
     <string name="GogoTitle">GoGo!</string>
-    <string name="action_settings">Settings</string>
-    <string name="email">E-Mail:</string>
-    <string name="password">Password:</string>
     <string name="GogoSubTitle">Find someone to travel with.</string>
+
+    <!--LoginToGogoActivity-->
     <string name="title_activity_login_to_gogo">Login To Gogo</string>
-    <string name="hello_world">Hello world!</string>
     <string name="sign_in">Sign In</string>
-    <string name="title_activity_where_to_go">Where To Go</string>
+    <string name="password">Password:</string>
+    <string name="email">E-Mail:</string>
 
     <!-- Where do you want to go activity -->
+    <string name="title_activity_where_to_go">Where To Go</string>
     <string name="where_do_you_want_to_go">Where do you want to go?</string>
+    <string name="title_activity_what_to_do">WhatToDoActivity</string>
+
+    <!-- WhatToDoActivity -->
+    <string name="what_do_you_want_to_do_in">What do you want to do in</string>
+    <string name="hiking_trekking">Hiking/Trekking</string>
 
 </resources>
