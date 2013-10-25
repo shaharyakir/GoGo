@@ -63,6 +63,7 @@
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/btnLogin"
+        android:onClick="loginWithFacebook"
         android:drawableLeft="@drawable/facebook_logo3"
         android:paddingLeft="10dp">
     </Button>

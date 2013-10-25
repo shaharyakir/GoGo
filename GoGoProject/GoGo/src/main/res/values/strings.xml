@@ -4,6 +4,7 @@
     <!-- General Strings -->
     <string name="app_name">GoGo</string>
     <string name="action_settings">Settings</string>
+    <string name="app_id">1409485639282344</string> <!-- Facebook App Id -->
 
     <!-- MainActivity -->
     <string name="loginWithGogo">Login with GoGo! account</string>
@@ -26,5 +27,6 @@
     <!-- WhatToDoActivity -->
     <string name="what_do_you_want_to_do_in">What do you want to do in</string>
     <string name="hiking_trekking">Hiking/Trekking</string>
+
 
 </resources>

@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.6+'
+        classpath 'com.android.tools.build:gradle:0.6.+'
     }
 }
 apply plugin: 'android'
@@ -17,13 +17,11 @@ android {
     buildToolsVersion "17.0.0"
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 17
+        minSdkVersion 7
+        targetSdkVersion 18
     }
 }
 
 dependencies {
-   // compile 'com.android.support:appcompat-v7:18.0.0'
-    compile files('libs/android-support-v4.jar')
-    compile project(':libraries:facebook')
+	compile 'com.android.support:appcompat-v7:+'
 }

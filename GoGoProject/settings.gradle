@@ -1,1 +1,1 @@
-include ':GoGo'
+include ':libraries:facebook', ':GoGo'

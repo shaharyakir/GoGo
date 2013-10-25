@@ -1,33 +1,49 @@
 package com.sashapps.gogo;
 
-import android.animation.ObjectAnimator;
-import android.app.ActionBar;
+
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.graphics.Paint;
 import android.graphics.Point;
-import android.graphics.Typeface;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
-import android.widget.Button;
+
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.Toast;
+import com.facebook.*;
+import com.facebook.model.GraphUser;
 
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
+
+
+
 
 public class MainActivity extends Activity {
 
     ViewGroup root;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         root = (ViewGroup)findViewById(R.id.mainLayout);
@@ -74,6 +90,8 @@ public class MainActivity extends Activity {
         ta.setInterpolator(new LinearInterpolator());
         ta.setDuration(8000);
         v.setAnimation(ta);
+
+
     }
 
     @Override
@@ -83,6 +101,44 @@ public class MainActivity extends Activity {
         return true;
     }
 
+    // ***************************
+    // Facebook Intergration Part
+    // ***************************
 
-    
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("Facebook","onActivityResult()");
+        Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+    }
+
+    public void loginWithFacebook(View v){
+        // start Facebook Login
+        Session.openActiveSession(this, true, new Session.StatusCallback() {
+            // callback when session changes state
+            @Override
+            public void call(Session session, SessionState state, Exception exception) {
+                Log.d("Facebook", "in call()");
+                if (session.isOpened()) {
+                    Log.d("Facebook", "session opened()");
+                    // make request to the /me API
+                    //noinspection deprecation
+                    Request.executeMeRequestAsync(session, new Request.GraphUserCallback() {
+
+                        // callback after Graph API response with user object
+                        @Override
+                        public void onCompleted(GraphUser user, Response response) {
+                            if (user != null) {
+                                Log.d("Facebook", user.getName());
+                            }
+
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+
+
 }

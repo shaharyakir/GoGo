@@ -5,14 +5,20 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="7"
         android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/GogoTheme" >
+
+        <activity android:name="com.facebook.LoginActivity"
+                  android:label="@string/app_name" />
+
         <activity
             android:name="com.sashapps.gogo.MainActivity"
             android:label="@string/app_name" >
@@ -48,6 +54,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
     </application>
 
 </manifest>
