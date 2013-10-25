@@ -65,8 +65,16 @@
         android:layout_alignLeft="@+id/btnLogin"
         android:onClick="loginWithFacebook"
         android:drawableLeft="@drawable/facebook_logo3"
+        android:visibility="invisible"
         android:paddingLeft="10dp">
     </Button>
+    <com.facebook.widget.LoginButton
+            android:id="@+id/btnLoginWithFacebookNative"
+            style="@style/RoundCorneredView.Button"
+            android:layout_alignRight="@+id/btnLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_alignTop="@+id/btnLoginWithFacebook">
 
+    </com.facebook.widget.LoginButton>
 
 </RelativeLayout>
